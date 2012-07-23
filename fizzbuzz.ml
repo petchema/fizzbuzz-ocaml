@@ -1,6 +1,15 @@
+let (|>) x f = f x
+
 let game x =
-  let base acc =
+
+  let rule num word acc =
+    if x mod num = 0 then acc ^ word else acc in
+
+  let defaultrule acc =
     if acc <> "" then acc else string_of_int x in
-  let mult num word f acc =
-    f (if x mod num = 0 then acc ^ word else acc) in
-  (mult 3 "Fizz" (mult 5 "Buzz" (mult 7 "Splash" base))) ""
+
+  ""
+  |> rule 3 "Fizz"
+  |> rule 5 "Buzz"
+  |> rule 7 "Splash"
+  |> defaultrule
