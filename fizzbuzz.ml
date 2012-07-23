@@ -1,5 +1,6 @@
 let game x =
-  if x mod 15 = 0 then "FizzBuzz"
-  else if x mod 3 = 0 then "Fizz"
-  else if x mod 5 = 0 then "Buzz"
-  else string_of_int x
+  let base acc =
+    if acc <> "" then acc else string_of_int x in
+  let mult num word f acc =
+    f (if x mod num = 0 then acc ^ word else acc) in
+  (mult 3 "Fizz" (mult 5 "Buzz" base)) ""
