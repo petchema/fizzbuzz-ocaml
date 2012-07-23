@@ -11,9 +11,11 @@ let test_three () =
   assert_equal (game 3) "Fizz"
 
 let suite = "FizzBuzz test suite" >::: [
+(* begin suite *)
   "test_one" >:: test_one;
   "test_two" >:: test_two;
   "test_three" >:: test_three;
+(* end suite *)
 ]
 
 let _ =
