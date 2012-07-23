@@ -16,6 +16,9 @@ let test_5 () =
 let test_15 () =
   assert_equal (game 15) "FizzBuzz"
 
+let test_7 () =
+  assert_equal (game 7) "Splash"
+
 let suite = "FizzBuzz test suite" >::: [
 (* begin suite *)
   "test_1" >:: test_1;
@@ -23,6 +26,7 @@ let suite = "FizzBuzz test suite" >::: [
   "test_3" >:: test_3;
   "test_5" >:: test_5;
   "test_15" >:: test_15;
+  "test_7" >:: test_7;
 (* end suite *)
 ]
 
