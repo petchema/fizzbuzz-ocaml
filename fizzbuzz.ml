@@ -1,13 +1,17 @@
 open OUnit
 
 let game x =
-  "1"
+  if x = 1 then "1" else "2"
 
 let test_one () =
   assert_equal (game 1) "1"
 
+let test_two () =
+  assert_equal (game 2) "2"
+
 let suite = "FizzBuzz test suite" >::: [
   "test_one" >:: test_one;
+  "test_two" >:: test_two;
 ]
 
 let _ =
