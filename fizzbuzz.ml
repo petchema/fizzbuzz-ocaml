@@ -1,9 +1,8 @@
 open OUnit
 
 let game x =
-  if x = 1 then "1" 
-  else if x = 2 then "2"
-  else "Fizz"
+  if x mod 3 = 0 then "Fizz"
+  else string_of_int x
 
 let test_one () =
   assert_equal (game 1) "1"
